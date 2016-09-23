@@ -12,20 +12,6 @@ alias cqlsh='cqlsh --keyspace test'
 
 export SLACK_TOKEN=xoxp-2558538308-57957110065-69306004519-c98f5cfc0a
 
-parse_git_branch() {
-
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-
-}
-
-GREEN="\[$(tput setaf 2)\]"
-LBLUE="\[$(tput setaf 6)\]"
-YELLOW="\[$(tput setaf 11)\]"
-RESET="\[$(tput sgr0)\]"
-
-export PS1="${LBLUE}\u ${YELLOW}\w${GREEN}$(parse_git_branch)${RESET}\n$ "
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GFh'
 
 alias fly="curl -s -O 'http://www.activeedge.co.uk/booking/daily-briefing.php' > /dev/null && sed -n '111p' daily-briefing.php && rmy daily-briefing.php"
@@ -42,6 +28,9 @@ alias pull="git pull"
 alias push="git push"
 alias add="git add *"
 alias gitc="git commit -m"
+alias commit="git add . && git add -u && git commit"
+alias status="git status"
+alias branch="git branch"
 
 alias cl="fc -e -|pbcopy"
 
@@ -71,7 +60,7 @@ alias c='clear'
 alias d='date'
 alias t='date'
 alias b="cd -"
-
+alias l="lock"
 # make sure bc start with standard math library
 alias bc='bc -l'
 # protect cp, mv, rm command with confirmation
@@ -85,6 +74,19 @@ alias grep='grep --color'
 alias ebash='vim ~/.bash_profile'
 alias lbash='cat ~/.bash_profile'
 alias ubash='source ~/.bash_profile'
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+GREEN="\[$(tput setaf 2)\]"
+LBLUE="\[$(tput setaf 6)\]"
+YELLOW="\[$(tput setaf 11)\]"
+RESET="\[$(tput sgr0)\]"
+
+export PS1="${LBLUE}\u ${YELLOW}\w${GREEN}\$(parse_git_branch)${RESET}\n$ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
 
 if [ "$_pre" != "yes" ]; then
  echo "loading pre command"
