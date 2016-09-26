@@ -10,7 +10,7 @@ alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 alias cqlsh='cqlsh --keyspace test'
 
-export SLACK_TOKEN=xoxp-2558538308-57957110065-69306004519-c98f5cfc0a
+export SLACK_TOKEN=
 
 alias ls='ls -GFh'
 
