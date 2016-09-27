@@ -1,6 +1,7 @@
 
 source ~/.bash/.git_complete
 
+source ~/.bash/.git_commands
 #pkill -f my_pattern
 
 alias skyid='echo "212857" | pbcopy && pbpaste'
@@ -20,19 +21,6 @@ export SLACK_TOKEN=xoxp-2558538308-57957110065-69306004519-c98f5cfc0a
 alias ls='ls -GFh'
 
 alias fly="curl -s -O 'http://www.activeedge.co.uk/booking/daily-briefing.php' > /dev/null && sed -n '111p' daily-briefing.php && rmy daily-briefing.php"
-
-# add and remove new/deleted files from git index automatically
-alias gitar="git ls-files -d -m -o -z --exclude-standard | xargs -0 git update-index --add --remove"
-
-# Remove git from a project
-alias ungit="find . -name '.git' -exec rm -rf {} \;"
-alias gits="git status"
-alias pull="git pull"
-alias push="git push"
-alias add="git add *"
-alias gitc="git commit -m"
-alias commit="git commit"
-alias checkout="git checkout"
 
 alias cl="fc -e -|pbcopy"
 
