@@ -94,7 +94,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 if [ "$_pre" != "yes" ]; then
  echo "loading pre command"
- source ~/.bash/.precommand
+ source ~/.precommand
  pre_install
  _pre="yes"
 fi

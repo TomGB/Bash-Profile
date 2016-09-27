@@ -5,7 +5,11 @@ if [ -f ~/.bash_profile ]; then
     cp ~/.bash_profile "./backup/.bash_profole.$(date +%F_%R)"
     cp .bash_profile ~/.bash_profile
 fi
-if [ -f ~/.precommand ]; then
-    cp ~/.precommand "./backup/.precommand.$(date +%F_%R)"
-    cp .precommand ~/.precommand
+if [ -d ~/.bash ]; then
+    cp -r ~/.bash "./backup/.bash.$(date +%F_%R)"
 fi
+
+cp -r ./bash ~/.bash
+
+source ~/.bash_profile
+
