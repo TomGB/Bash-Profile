@@ -1,4 +1,10 @@
 
+source ~/.git-completion
+
+#pkill -f my_pattern
+
+alias skyid='echo "212857" | pbcopy && pbpaste'
+
 alias n='terminal-notifier -title "Terminal" -message "Done with task!"'
 
 alias octave='/usr/local/octave/3.8.0/bin/octave-3.8.0'
@@ -8,19 +14,16 @@ alias lock='pmset displaysleepnow'
 
 alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
-alias cqlsh='cqlsh --keyspace test'
+alias cqlsh='cqlsh --keyspace mldata'
 
-export SLACK_TOKEN=
-
+export SLACK_TOKEN=xoxp-2558538308-57957110065-69306004519-c98f5cfc0a
 alias ls='ls -GFh'
 
 alias fly="curl -s -O 'http://www.activeedge.co.uk/booking/daily-briefing.php' > /dev/null && sed -n '111p' daily-briefing.php && rmy daily-briefing.php"
 
 # add and remove new/deleted files from git index automatically
 alias gitar="git ls-files -d -m -o -z --exclude-standard | xargs -0 git update-index --add --remove"
-# git push
-alias gpd="git push origin dev"
-alias gpm="git push origin master"
+
 # Remove git from a project
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias gits="git status"
@@ -28,9 +31,8 @@ alias pull="git pull"
 alias push="git push"
 alias add="git add *"
 alias gitc="git commit -m"
-alias commit="git add . && git add -u && git commit"
-alias status="git status"
-alias branch="git branch"
+alias commit="git commit"
+alias checkout="git checkout"
 
 alias cl="fc -e -|pbcopy"
 
@@ -60,7 +62,9 @@ alias c='clear'
 alias d='date'
 alias t='date'
 alias b="cd -"
-alias l="lock"
+alias now='date +%s | pbcopy && pbpaste'
+cd() { builtin cd "$@" && ls; }
+
 # make sure bc start with standard math library
 alias bc='bc -l'
 # protect cp, mv, rm command with confirmation
@@ -70,9 +74,8 @@ alias vm=mv
 alias rm='rm -i'
 alias rmy="'rm'"
 alias grep='grep --color'
-cd() { builtin cd "$@" && ls; }
 
-alias ebash='vim ~/.bash_profile'
+alias ebash='vim ~/.bash_profile && ubash'
 alias lbash='cat ~/.bash_profile'
 alias ubash='source ~/.bash_profile'
 
