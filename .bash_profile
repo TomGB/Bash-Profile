@@ -2,6 +2,19 @@
 source ~/.bash/.git_complete
 
 source ~/.bash/.git_commands
+
+alias nosleep="caffeinate"
+
+enc(){
+openssl enc -aes-256-cbc -e -in $1 -out $1.enc
+}
+
+dec(){
+name=$1;
+echo $name;
+openssl enc -aes-256-cbc -d -in $name -out ${name/.enc/};
+}
+
 #pkill -f my_pattern
 
 alias skyid='echo "212857" | pbcopy && pbpaste'
