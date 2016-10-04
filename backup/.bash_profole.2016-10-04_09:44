@@ -2,24 +2,11 @@
 source ~/.bash/.git_complete
 
 source ~/.bash/.git_commands
-
-alias matrix='cmatrix'
-alias w='curl wttr.in/leeds'
-alias nosleep="caffeinate"
-
-enc(){
-openssl enc -aes-256-cbc -e -in $1 -out $1.enc
-}
-
-dec(){
-name=$1;
-echo $name;
-openssl enc -aes-256-cbc -d -in $name -out ${name/.enc/};
-}
-
 #pkill -f my_pattern
 
 alias skyid='echo "212857" | pbcopy && pbpaste'
+
+alias gdoc="open https://docs.google.com/document/create?usp=drive_web&folder=0B7uLSn4qsDThUGc2b0ZibFdxczA&authuser=0"
 
 alias n='terminal-notifier -title "Terminal" -message "Done with task!"'
 

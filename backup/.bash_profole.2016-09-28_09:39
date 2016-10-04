@@ -1,21 +1,5 @@
 
-source ~/.bash/.git_complete
-
-source ~/.bash/.git_commands
-
-alias matrix='cmatrix'
-alias w='curl wttr.in/leeds'
-alias nosleep="caffeinate"
-
-enc(){
-openssl enc -aes-256-cbc -e -in $1 -out $1.enc
-}
-
-dec(){
-name=$1;
-echo $name;
-openssl enc -aes-256-cbc -d -in $name -out ${name/.enc/};
-}
+source ~/.git-completion
 
 #pkill -f my_pattern
 
@@ -36,6 +20,19 @@ export SLACK_TOKEN=xoxp-2558538308-57957110065-69306004519-c98f5cfc0a
 alias ls='ls -GFh'
 
 alias fly="curl -s -O 'http://www.activeedge.co.uk/booking/daily-briefing.php' > /dev/null && sed -n '111p' daily-briefing.php && rmy daily-briefing.php"
+
+# add and remove new/deleted files from git index automatically
+alias gitar="git ls-files -d -m -o -z --exclude-standard | xargs -0 git update-index --add --remove"
+
+# Remove git from a project
+alias ungit="find . -name '.git' -exec rm -rf {} \;"
+alias gits="git status"
+alias pull="git pull"
+alias push="git push"
+alias add="git add *"
+alias gitc="git commit -m"
+alias commit="git commit"
+alias checkout="git checkout"
 
 alias cl="fc -e -|pbcopy"
 
@@ -97,7 +94,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 if [ "$_pre" != "yes" ]; then
  echo "loading pre command"
- source ~/.bash/.precommand
+ source ~/.precommand
  pre_install
  _pre="yes"
 fi
