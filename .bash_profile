@@ -1,6 +1,9 @@
+source $(brew --prefix nvm)/nvm.sh
 
 source ~/.bash/.git_complete
 source ~/.bash/.git_commands
+
+alias killport='sh ~/.killport $1'
 
 alias matrix='cmatrix'
 alias w='curl wttr.in/leeds'
@@ -58,7 +61,13 @@ alias vm=mv
 alias rm='rm -i'
 alias rmy="'rm'"
 alias grep='grep --color'
-cd() { builtin cd "$@" && ls; }
+cd() {
+builtin cd "$@";
+if [ -f ./.nvmrc ]; then
+    nvm use
+fi
+ls;
+}
 
 alias abash='atom ~/.bash_profile'
 alias ebash='vim ~/.bash_profile && ubash'
@@ -84,3 +93,6 @@ if [ "$_pre" != "yes" ]; then
  pre_install
  _pre="yes"
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
