@@ -11,6 +11,7 @@ alias w='curl wttr.in/leeds'
 alias skyid='echo "212857" | pbcopy && pbpaste'
 
 alias server='python -m SimpleHTTPServer'
+alias phpserver='php -S localhost:8000'
 alias octave='/usr/local/octave/3.8.0/bin/octave-3.8.0'
 alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
