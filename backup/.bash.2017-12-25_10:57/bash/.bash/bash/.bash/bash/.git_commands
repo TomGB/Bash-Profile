@@ -1,0 +1,12 @@
+# add and remove new/deleted files from git index automatically
+alias gitar="git ls-files -d -m -o -z --exclude-standard | xargs -0 git update-index --add --remove"
+# Remove git from a project
+alias ungit="find . -name '.git' -exec rm -rf {} \;"
+alias gits="git status"
+alias pull="git pull"
+alias push="git push"
+alias add="git add *"
+alias gitc="git commit -m"
+alias commit="git add . && git add -u && git commit"
+alias status="git status"
+alias branch="git branch"

@@ -1,5 +1,3 @@
-export MINECRAFT_SAVES=/Users/tba16/Library/Application\ Support/minecraft/saves
-
 source $(brew --prefix nvm)/nvm.sh
 
 source ~/.bash/.git_complete
